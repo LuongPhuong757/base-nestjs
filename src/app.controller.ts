@@ -1,13 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { BadRequestException, Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+	constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    const a=123231111111111;
-    return this.appService.getHello();
-  }
+	@Get()
+	getHello(): string {
+		// throw new BadRequestException('error')
+		return this.appService.getHello();
+	}
 }
