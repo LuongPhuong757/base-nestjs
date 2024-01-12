@@ -1,15 +1,13 @@
 import * as bcrypt from 'bcryptjs';
 import { SignUpDto } from './dto/sign-up.dto';
 // import { UsersService } from '@modules/users/users.service';
-import { ConflictException,Injectable } from '@nestjs/common';
+import { ConflictException, Injectable } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 
 @Injectable()
 export class AuthService {
 	private SALT_ROUND = 11;
-	constructor(
-		private readonly users_service: UsersService,
-	) {}
+	constructor(private readonly users_service: UsersService) {}
 
 	async signUp(sign_up_dto: SignUpDto) {
 		try {

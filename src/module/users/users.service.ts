@@ -23,13 +23,13 @@ export class UsersService {
 		return user;
 	}
 
-	async findOneByCondition (condition: {}) {
-		return this.users_repository.findOneByCondition(condition)
+	async findOneByCondition(condition: any) {
+		return this.users_repository.findOneByCondition(condition);
 	}
 
 	findAll() {
 		// return this.yourModel.find()
-		return this.users_repository.findAll({})
+		return this.users_repository.findAll({});
 	}
 
 	findOne(id: number) {

@@ -11,7 +11,6 @@ import {
 import { CreateAddressDto } from './create-address.dto';
 
 export class CreateUserDto {
-
 	@IsNotEmpty({ message: 'error' }) // Bắt buộc phải gửi lên
 	@MaxLength(50) // Tối đa 50 ký tự
 	first_name: string;
@@ -19,7 +18,6 @@ export class CreateUserDto {
 	@IsNotEmpty()
 	@MaxLength(50)
 	last_name: string;
-
 
 	@IsOptional()
 	@MaxLength(50)
