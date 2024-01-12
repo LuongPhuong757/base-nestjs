@@ -17,6 +17,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
 		const status = exception.getStatus();
 		// NOTICE: GLOBAL FILTER
 		this.logger.warn('===TRIGGER GLOBAL FILTER===');
+		console.log(exception)
 		response.status(status).json({
 			statusCode: status,
 			message: exception.message,

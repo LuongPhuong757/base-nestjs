@@ -15,7 +15,7 @@ export class UsersService {
 		@Inject('UsersRepositoryInterface')
 		private readonly users_repository: UsersRepository,
 	) {}
-	async create(createUserDto: CreateUserDto) {
+	async create(createUserDto) {
 		console.log(createUserDto);
 		// const instance = new Model<User>
 		const user = await this.users_repository.create(createUserDto);
@@ -23,8 +23,13 @@ export class UsersService {
 		return user;
 	}
 
+	async findOneByCondition (condition: {}) {
+		return this.users_repository.findOneByCondition(condition)
+	}
+
 	findAll() {
 		// return this.yourModel.find()
+		return this.users_repository.findAll({})
 	}
 
 	findOne(id: number) {

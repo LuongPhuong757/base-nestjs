@@ -14,12 +14,12 @@ import { UsersModule } from './module/users/users.module';
 @Module({
 	imports: [
 		UsersModule,
-		ThrottlerModule.forRoot([
-			{
-				ttl: 10000,
-				limit: 3,
-			},
-		]),
+		// ThrottlerModule.forRoot([
+		// 	{
+		// 		ttl: 10000,
+		// 		limit: 3,
+		// 	},
+		// ]),
 		ConfigModule.forRoot({
 			isGlobal: true,
 			envFilePath: '.env',
@@ -45,10 +45,10 @@ import { UsersModule } from './module/users/users.module';
 	controllers: [AppController],
 	providers: [
 		AppService,
-		{
-			provide: 'APP_GUARD',
-			useClass: CustomThrottlerGuard,
-		},
+		// {
+		// 	provide: 'APP_GUARD',
+		// 	useClass: CustomThrottlerGuard,
+		// },
 	],
 })
 export class AppModule {
